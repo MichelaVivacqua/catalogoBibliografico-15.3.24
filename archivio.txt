@@ -1,0 +1,21 @@
+Libro{isbn=2167651114, titolo='Far From the Madding Crowd', annoPubblicazione=1981, numeroPagine=599, autore='Umberto Russo', genere='Short story'}
+Libro{isbn=2233656334, titolo='Recalled to Life', annoPubblicazione=1978, numeroPagine=842, autore='Battista Caputo', genere='Science fiction'}
+Libro{isbn=2152766556, titolo='Vile Bodies', annoPubblicazione=1970, numeroPagine=175, autore='Alberto Ruggiero', genere='Western'}
+Libro{isbn=2181941104, titolo='A Swiftly Tilting Planet', annoPubblicazione=2011, numeroPagine=69, autore='Sig. Giancarlo Fior', genere='Mythopoeia'}
+Libro{isbn=2196436358, titolo='A Handful of Dust', annoPubblicazione=1991, numeroPagine=681, autore='Omar Bruno', genere='Narrative nonfiction'}
+Libro{isbn=2187008984, titolo='The Way of All Flesh', annoPubblicazione=1995, numeroPagine=298, autore='Cesidia Ferraro', genere='Fantasy'}
+Libro{isbn=2174354874, titolo='In Dubious Battle', annoPubblicazione=2009, numeroPagine=466, autore='Tosca Grasso', genere='Biography/Autobiography'}
+Libro{isbn=2149604332, titolo='Let Us Now Praise Famous Men', annoPubblicazione=1979, numeroPagine=66, autore='Dott. Modesto D'amico', genere='Fiction in verse'}
+Libro{isbn=2238822529, titolo='Oh! To be in England', annoPubblicazione=2002, numeroPagine=72, autore='Elga Carbon', genere='Science fiction'}
+Libro{isbn=2225771124, titolo='After Many a Summer Dies the Swan', annoPubblicazione=1971, numeroPagine=434, autore='Ulrico Palumbo', genere='Essay'}
+Rivista{isbn=64, titolo='Beyond the Mexique Bay', annoPubblicazione=2011, numeroPagine=40, tipoRivista=SETTIMANALE}
+Rivista{isbn=14, titolo='Specimen Days', annoPubblicazione=2009, numeroPagine=87, tipoRivista=MENSILE}
+Rivista{isbn=342853, titolo='The Cricket on the Hearth', annoPubblicazione=2012, numeroPagine=17, tipoRivista=MENSILE}
+Rivista{isbn=65041344, titolo='A Scanner Darkly', annoPubblicazione=2016, numeroPagine=51, tipoRivista=MENSILE}
+Rivista{isbn=5, titolo='Some Buried Caesar', annoPubblicazione=2003, numeroPagine=86, tipoRivista=SETTIMANALE}
+Rivista{isbn=4186, titolo='I Sing the Body Electric', annoPubblicazione=2004, numeroPagine=69, tipoRivista=SETTIMANALE}
+Rivista{isbn=286164, titolo='The Way of All Flesh', annoPubblicazione=2015, numeroPagine=66, tipoRivista=SEMESTRALE}
+Rivista{isbn=190100, titolo='Number the Stars', annoPubblicazione=2000, numeroPagine=66, tipoRivista=MENSILE}
+Rivista{isbn=506004860, titolo='The Last Temptation', annoPubblicazione=2008, numeroPagine=41, tipoRivista=SETTIMANALE}
+Rivista{isbn=250380, titolo='Recalled to Life', annoPubblicazione=2010, numeroPagine=13, tipoRivista=MENSILE}
+Rivista{isbn=165165, titolo='uvvut', annoPubblicazione=15651, numeroPagine=65, tipoRivista=SEMESTRALE}

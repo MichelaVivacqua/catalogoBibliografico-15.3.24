@@ -7,9 +7,11 @@ import MichelaVivacqua.entities.TipoRivista;
 import com.github.javafaker.Faker;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -201,7 +203,20 @@ public class Application {
         scanner.close();
 
 
+//TASK 6: Salvataggio su disco dell'archivio
 
+        System.out.println("Salvataggio dell'archivio su disco in corso...");
+        File file = new File("archivio.txt");
+        try {
+            StringBuilder sb = new StringBuilder();
+            for (ElementoBibliografico elemento : archivio) {
+                sb.append(elemento.toString()).append(System.lineSeparator());
+            }
+            FileUtils.writeStringToFile(file, sb.toString(), StandardCharsets.UTF_8);
+            logger.info("Archivio salvato con successo su disco.");
+        } catch (IOException e) {
+            logger.error("Errore durante il salvataggio dell'archivio su disco: " + e.getMessage());
+        }
 
     }
 }
