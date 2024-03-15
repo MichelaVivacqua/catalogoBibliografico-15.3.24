@@ -15,4 +15,15 @@ public class Rivista extends ElementoBibliografico{
     public void setTipoRivista(TipoRivista tipoRivista) {
         this.tipoRivista = tipoRivista;
     }
+
+    @Override
+    public String toString() {
+        return "Rivista{" +
+                "isbn=" + isbn +
+                ", titolo='" + titolo + '\'' +
+                ", annoPubblicazione=" + annoPubblicazione +
+                ", numeroPagine=" + numeroPagine +
+                ", tipoRivista=" + tipoRivista +
+                '}';
+    }
 }

@@ -1,6 +1,9 @@
 package MichelaVivacqua.entities;
 
-public class Libro extends ElementoBibliografico{
+
+import com.github.javafaker.Faker;
+
+public class Libro extends ElementoBibliografico  {
 
     private String autore;
     private String genere;
@@ -28,4 +31,18 @@ public class Libro extends ElementoBibliografico{
 
 
     }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "isbn=" + isbn +
+                ", titolo='" + titolo + '\'' +
+                ", annoPubblicazione=" + annoPubblicazione +
+                ", numeroPagine=" + numeroPagine +
+                ", autore='" + autore + '\'' +
+                ", genere='" + genere + '\'' +
+                '}';
+    }
+
+
 }
