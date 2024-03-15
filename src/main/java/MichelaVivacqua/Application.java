@@ -47,6 +47,7 @@ public class Application {
             archivio.add(rivista);
 //            System.out.println(rivista);
         }
+        System.out.println("ECCO L'ARCHIVIO ATTUALE!");
         for (ElementoBibliografico elemento : archivio) {
             System.out.println(elemento);
         }
@@ -120,6 +121,21 @@ public class Application {
             }
         } else {
             logger.error( scelta + " non è un'opzione valida!  ");
+        }
+// TASK2:Rimozione di un elemento dato un codice ISBN
+
+
+        System.out.print("Inserisci il codice ISBN dell'elemento da rimuovere: ");
+        long isbnToRemove = scanner.nextLong();
+
+        boolean removed = archivio.removeIf(elemento -> elemento.getIsbn() == isbnToRemove);
+
+        if (removed) {
+            logger.info("Elemento con ISBN " + isbnToRemove + " rimosso con successo.");
+            System.out.println("GRAZIE. ECCO L'ARCHIVIO AGGIORNATO!");
+            archivio.forEach(System.out::println);;
+        } else {
+            logger.warn("Nessun elemento trovato con ISBN " + isbnToRemove);
         }
 
         scanner.close();
