@@ -7,6 +7,7 @@ import MichelaVivacqua.entities.TipoRivista;
 import com.github.javafaker.Faker;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.slf4j.Logger;
@@ -159,7 +160,25 @@ public class Application {
             logger.warn("Nessun elemento trovato con ISBN " + isbnToSearch);
         }
 
+
+        // TASK4:Ricerca per anno di pubblicazione
+
+        System.out.print("Inserisci l'anno di pubblicazione degli elementi da cercare: ");
+        long yearToSearch = scanner.nextLong();
+
+        List<ElementoBibliografico> foundElements = archivio.stream()
+                .filter(elemento -> elemento.getAnnoPubblicazione() == yearToSearch)
+                .toList();
+
+        if (!foundElements.isEmpty()) {
+            logger.info("Elementi trovati:");
+            foundElements.forEach(elemento -> logger.info(elemento.toString()));
+        } else {
+            logger.warn("Nessun elemento trovato con anno di pubblicazione " + yearToSearch);
+        }
+
         scanner.close();
+
 
 
 
