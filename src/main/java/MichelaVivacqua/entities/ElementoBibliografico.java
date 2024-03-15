@@ -27,31 +27,16 @@ public abstract class ElementoBibliografico {
         return isbn;
     }
 
-    public void setIsbn(long isbn) {
-        this.isbn = isbn;
-    }
-
     public String getTitolo() {
         return titolo;
-    }
-
-    public void setTitolo(String titolo) {
-        this.titolo = titolo;
     }
 
     public int getAnnoPubblicazione() {
         return annoPubblicazione;
     }
 
-    public void setAnnoPubblicazione(int annoPubblicazione) {
-        this.annoPubblicazione = annoPubblicazione;
-    }
-
     public long getNumeroPagine() {
         return numeroPagine;
     }
 
-    public void setNumeroPagine(long numeroPagine) {
-        this.numeroPagine = numeroPagine;
-    }
 }

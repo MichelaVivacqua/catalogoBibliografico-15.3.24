@@ -12,16 +12,8 @@ public class Libro extends ElementoBibliografico  {
         return autore;
     }
 
-    public void setAutore(String autore) {
-        this.autore = autore;
-    }
-
     public String getGenere() {
         return genere;
-    }
-
-    public void setGenere(String genere) {
-        this.genere = genere;
     }
 
     public Libro(long isbn, String titolo, int annoPubblicazione, long numeroPagine, String autore, String genere) {

@@ -12,9 +12,6 @@ public class Rivista extends ElementoBibliografico{
         return tipoRivista;
     }
 
-    public void setTipoRivista(TipoRivista tipoRivista) {
-        this.tipoRivista = tipoRivista;
-    }
 
     @Override
     public String toString() {

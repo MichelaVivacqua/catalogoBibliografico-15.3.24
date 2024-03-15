@@ -16,6 +16,7 @@ public class Application {
         Faker faker = new Faker(Locale.ITALY);
         Logger logger = LoggerFactory.getLogger(Application.class);
         Scanner scanner = new Scanner(System.in);
+        File file = new File("archivio.txt");
 
         List<ElementoBibliografico> archivio = new ArrayList<>();
 
@@ -52,28 +53,57 @@ public class Application {
         }
 
 
-        System.out.println("1.CREA UN LIBRO");
-        System.out.println("2.CREA UNA RIVISTA");
-        String scelta = scanner.nextLine();
+        boolean continua = true;
+
+        while (continua) {
+            System.out.println("Scegli un'operazione:");
+            System.out.println("1. Crea un libro");
+            System.out.println("2. Crea una rivista");
+            System.out.println("3. Rimuovi un elemento dato un codice ISBN");
+            System.out.println("4. Cerca per ISBN");
+            System.out.println("5. Cerca per anno di pubblicazione");
+            System.out.println("6. Cerca per autore");
+            System.out.println("7. Salva su disco l'archivio");
+            System.out.println("8. Carica dall'archivio su disco");
+            System.out.println("9. Esci");
+
+            String scelta = scanner.nextLine();
 
 
-        // TASK1:Aggiunta di un elemento
+            // TASK1:Aggiunta di un elemento
 
-        if (scelta.equals("1")) {
+            switch (scelta) {
+            case "1":{
             try {
                 System.out.println("Inserisci i dettagli del libro da aggiungere:");
 
-                System.out.print("ISBN: ");
-                long isbn = Long.parseLong(scanner.nextLine());
+                long isbn;
+                try {
+                    System.out.print("ISBN: ");
+                    isbn = Long.parseLong(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    logger.error("L'ISBN deve essere formato da numeri. Riprova.", e);
+                    continue;}
 
                 System.out.print("Titolo: ");
                 String titolo = scanner.nextLine();
 
-                System.out.print("Anno di pubblicazione: ");
-                int annoPubblicazione = Integer.parseInt(scanner.nextLine());
+                int annoPubblicazione;
+                try {
+                    System.out.print("Anno di pubblicazione: ");
+                    annoPubblicazione = Integer.parseInt(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    logger.error("L'anno deve essere inserito in numeri. Riprova.", e);
+                    continue;}
 
-                System.out.print("Numero di pagine: ");
-                long numeroPagine = Long.parseLong(scanner.nextLine());
+
+                long numeroPagine;
+                try {
+                    System.out.print("Inserisci il numero di pagine: ");
+                    numeroPagine = Long.parseLong(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    logger.error("Il numero di pagine chiaramente può essere solo un numero. Riprova.", e);
+                    continue;}
 
                 System.out.print("Autore: ");
                 String autore = scanner.nextLine();
@@ -89,25 +119,51 @@ public class Application {
                 logger.error("Non hai inserito il formato corretto!");
             }
 
-        } else if (scelta.equals("2")) {
+            }
+            break;
+            case "2": {
             try {
                 System.out.println("Inserisci i dettagli della rivista da aggiungere:");
 
-                System.out.print("ISBN: ");
-                long isbn = Long.parseLong(scanner.nextLine());
+                long isbn;
+                try {
+                    System.out.print("ISBN: ");
+                    isbn = Long.parseLong(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    logger.error("L'ISBN deve essere formato da numeri. Riprova.", e);
+                    continue;}
 
                 System.out.print("Titolo: ");
                 String titolo = scanner.nextLine();
 
-                System.out.print("Anno di pubblicazione: ");
-                int annoPubblicazione = Integer.parseInt(scanner.nextLine());
+                int annoPubblicazione;
+                try {
+                    System.out.print("Anno di pubblicazione: ");
+                    annoPubblicazione = Integer.parseInt(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    logger.error("L'anno deve essere inserito in numeri. Riprova.", e);
+                    continue;}
 
-                System.out.print("Numero di pagine: ");
-                long numeroPagine = Long.parseLong(scanner.nextLine());
+                long numeroPagine;
+                try {
+                    System.out.print("Inserisci il numero di pagine: ");
+                    numeroPagine = Long.parseLong(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    logger.error("Il numero di pagine chiaramente può essere solo un numero. Riprova.", e);
+                    continue;}
 
-                System.out.print("Tipo rivista (SETTIMANALE, MENSILE, SEMESTRALE): ");
-                String tipoRivistaInput = scanner.nextLine();
-                TipoRivista tipoRivista = TipoRivista.valueOf(tipoRivistaInput.toUpperCase());
+
+                TipoRivista tipoRivista;
+                try {
+                    System.out.print("Tipo rivista (SETTIMANALE, MENSILE, SEMESTRALE): ");
+                    String tipoRivistaInput = scanner.nextLine();
+                    tipoRivista = TipoRivista.valueOf(tipoRivistaInput.toUpperCase());
+
+                } catch (IllegalArgumentException e) {
+                    logger.error("Tipo di rivista non valido. Assicurati di inserire uno dei seguenti valori: SETTIMANALE, MENSILE, SEMESTRALE.", e);
+                    continue; 
+                }
+
 
                 Rivista nuovaRivista = new Rivista(isbn, titolo, annoPubblicazione, numeroPagine, tipoRivista);
                 archivio.add(nuovaRivista);
@@ -116,13 +172,13 @@ public class Application {
             } catch (InputMismatchException e) {
                 logger.error("Non hai inserito il formato corretto!");
             }
-        } else {
-            logger.error( scelta + " non è un'opzione valida!  ");
         }
+            break;
 
 
 // TASK2:Rimozione di un elemento dato un codice ISBN
 
+                case "3":
         System.out.print("Inserisci il codice ISBN dell'elemento da rimuovere: ");
         long isbnToRemove = Long.parseLong(scanner.nextLine());
 
@@ -135,9 +191,12 @@ public class Application {
         } else {
             logger.warn("Nessun elemento trovato con ISBN " + isbnToRemove);
         }
+                    break;
 
 
         // TASK3:Ricerca per ISBN
+
+                case "4":
 
         System.out.print("Inserisci il codice ISBN dell'elemento da cercare: ");
         long isbnToSearch = Long.parseLong(scanner.nextLine());
@@ -152,10 +211,12 @@ public class Application {
         } else {
             logger.warn("Nessun elemento trovato con ISBN " + isbnToSearch);
         }
+                    break;
 
 
         // TASK4:Ricerca per anno di pubblicazione
 
+                case "5":
         System.out.print("Inserisci l'anno di pubblicazione degli elementi da cercare: ");
         long yearToSearch = Long.parseLong(scanner.nextLine());
 
@@ -169,10 +230,12 @@ public class Application {
         } else {
             logger.warn("Nessun elemento trovato con anno di pubblicazione " + yearToSearch);
         }
+                    break;
 
 
 //        TASK 5: Ricerca per autore
 
+                case "6":
         System.out.print("Inserisci l'autore dell'elemento da cercare: ");
         String autoreToSearch = scanner.nextLine();
 
@@ -188,15 +251,13 @@ public class Application {
         } else {
             logger.warn("Nessun libro trovato per l'autore " + autoreToSearch);
         }
+                    break;
 
 
-        scanner.close();
+        //TASK 6: Salvataggio su disco dell'archivio
 
-
-//TASK 6: Salvataggio su disco dell'archivio
-
- File file = new File("archivio.txt");
-System.out.println("Salvataggio dell'archivio su disco in corso...");
+                case "7":
+                    System.out.println("Salvataggio dell'archivio su disco in corso...");
         try (PrintWriter writer = new PrintWriter(new FileWriter(file))) {
             for (ElementoBibliografico elemento : archivio) {
                 if (elemento instanceof Libro) {
@@ -210,11 +271,12 @@ System.out.println("Salvataggio dell'archivio su disco in corso...");
             logger.info("Archivio salvato con successo su disco.");
         } catch (IOException e) {
             logger.error("Errore durante il salvataggio dell'archivio su disco: " + e.getMessage());
-        }
+        }break;
 
 
 //        TASK 7: Caricamento dal disco dell'archivio
 
+                case "8":
         System.out.println("Caricamento dell'archivio dal disco in corso...");
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
@@ -257,6 +319,17 @@ System.out.println("Salvataggio dell'archivio su disco in corso...");
         } catch (IOException | IllegalArgumentException e) {
             logger.error("Errore durante il caricamento dell'archivio dal disco: " + e.getMessage());
         }
+                    break;
+                case "9":
+                    continua = false;
+                    System.out.println("Arrivederci!");
+                    break;
+                default:
+                    System.out.println("Scelta non valida. Riprova.");
+                    break;
+            }
+        }
+        scanner.close();
 
     }
 }

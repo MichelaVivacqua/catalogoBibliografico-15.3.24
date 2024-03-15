@@ -1,20 +1,21 @@
-Libro;2165056642;Dulce et Decorum Est;1998;505;Sirio Battaglia;Mythopoeia
-Libro;2206853049;Dying of the Light;1973;800;Valdo Bianchi;Humor
-Libro;2168476407;After Many a Summer Dies the Swan;1998;114;Dr. Eufemia Mazza;Mythology
-Libro;2193946623;The Line of Beauty;1983;670;Dante Messina;Fable
-Libro;2175594781;In Dubious Battle;1979;592;Tommaso D'angelo;Fairy tale
-Libro;2158106852;Waiting for the Barbarians;1986;347;Fernando Sorrentino;Fantasy
-Libro;2240610161;To Sail Beyond the Sunset;2011;715;Emidio Bianc;Fanfiction
-Libro;2206997720;Tender Is the Night;1988;704;Benedetta Coppola;Fable
-Libro;2181403361;Surprised by Joy;1984;443;Assia Ruggiero;Science fiction
-Libro;2167069316;After Many a Summer Dies the Swan;1978;593;Dott. Alessandro Bernardi;Folklore
-Rivista;3217855;Ring of Bright Water;2006;29;SEMESTRALE
-Rivista;366;Tiger! Tiger!;2005;81;MENSILE
-Rivista;2265708;After Many a Summer Dies the Swan;2002;74;SEMESTRALE
-Rivista;321573;The Wind's Twelve Quarters;2012;29;MENSILE
-Rivista;39023;Blood's a Rover;2015;11;SETTIMANALE
-Rivista;45457470;The Green Bay Tree;2018;91;SETTIMANALE
-Rivista;4617301;The Stars' Tennis Balls;2019;86;MENSILE
-Rivista;21;All Passion Spent;2004;66;MENSILE
-Rivista;784;Consider Phlebas;2011;90;SETTIMANALE
-Libro;123456;leghe sotto i mari;2024;3;michela;bellissimo
+Libro;2238509846;A Catskill Eagle;2004;826;Fernando Martino;Fairy tale
+Libro;2177744390;Consider the Lilies;1989;241;Sirio Fontana;Western
+Libro;2195884589;The Wind's Twelve Quarters;1997;268;Costanzo Marian;Legend
+Libro;2218492369;A Glass of Blessings;1969;206;Dr. Evita Bellini;Mystery
+Libro;2234389517;Of Mice and Men;1998;147;Cleopatra Montanari;Biography/Autobiography
+Libro;2157261791;Of Human Bondage;2011;590;Italo Guerra;Reference book
+Libro;2203043358;The Widening Gyre;1968;769;Sig. Rosolino Barone;Mythology
+Libro;2165190462;Arms and the Man;1984;388;Giobbe Messina;Mythopoeia
+Libro;2221279446;Recalled to Life;1964;973;Bibiana De Santis;Textbook
+Libro;2175601956;Beneath the Bleeding;1976;761;Laerte Ferretti;Mythopoeia
+Rivista;30552;Many Waters;2000;79;SETTIMANALE
+Rivista;60700830;For a Breath I Tarry;2015;31;SEMESTRALE
+Rivista;85132;The Wings of the Dove;2007;44;SEMESTRALE
+Rivista;733940;The Mirror Crack'd from Side to Side;2010;26;MENSILE
+Rivista;21386;Dance Dance Dance;2012;50;SETTIMANALE
+Rivista;432603767;The Grapes of Wrath;2018;11;MENSILE
+Rivista;806603;Fair Stood the Wind for France;2002;94;SEMESTRALE
+Rivista;59962;All the King's Men;2017;45;MENSILE
+Rivista;856392;Françoise Sagan;2013;66;MENSILE
+Libro;234567;sdfghjk;234567;3456;sdfghjk;dfghjk
+Rivista;34567;dvbnm;34567;3456;MENSILE
