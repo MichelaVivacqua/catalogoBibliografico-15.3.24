@@ -165,6 +165,7 @@ public class Application {
 
         System.out.print("Inserisci l'anno di pubblicazione degli elementi da cercare: ");
         long yearToSearch = scanner.nextLong();
+        scanner.nextLine();
 
         List<ElementoBibliografico> foundElements = archivio.stream()
                 .filter(elemento -> elemento.getAnnoPubblicazione() == yearToSearch)
@@ -176,6 +177,26 @@ public class Application {
         } else {
             logger.warn("Nessun elemento trovato con anno di pubblicazione " + yearToSearch);
         }
+
+
+//        TASK 5: Ricerca per autore
+
+        System.out.print("Inserisci l'autore dell'elemento da cercare: ");
+        String autoreToSearch = scanner.nextLine();
+
+        List<Libro> foundBooksByAutore = archivio.stream()
+                .filter(elemento -> elemento instanceof Libro)
+                .map(elemento -> (Libro) elemento)
+                .filter(libro -> libro.getAutore().equalsIgnoreCase(autoreToSearch))
+                .toList();
+
+        if (!foundBooksByAutore.isEmpty()) {
+            logger.info("Libri trovati per l'autore " + autoreToSearch + ":");
+            foundBooksByAutore.forEach(libro -> logger.info(libro.toString()));
+        } else {
+            logger.warn("Nessun libro trovato per l'autore " + autoreToSearch);
+        }
+
 
         scanner.close();
 
