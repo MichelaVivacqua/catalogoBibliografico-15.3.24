@@ -7,6 +7,7 @@ import MichelaVivacqua.entities.TipoRivista;
 import com.github.javafaker.Faker;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,7 +58,9 @@ public class Application {
         System.out.println("2.CREA UNA RIVISTA");
         String scelta = scanner.nextLine();
 
+
         // TASK1:Aggiunta di un elemento
+
         if (scelta.equals("1")) {
             try {
                 System.out.println("Inserisci i dettagli del libro da aggiungere:");
@@ -122,8 +125,9 @@ public class Application {
         } else {
             logger.error( scelta + " non è un'opzione valida!  ");
         }
-// TASK2:Rimozione di un elemento dato un codice ISBN
 
+
+// TASK2:Rimozione di un elemento dato un codice ISBN
 
         System.out.print("Inserisci il codice ISBN dell'elemento da rimuovere: ");
         long isbnToRemove = scanner.nextLong();
@@ -138,7 +142,25 @@ public class Application {
             logger.warn("Nessun elemento trovato con ISBN " + isbnToRemove);
         }
 
+
+        // TASK3:Ricerca per ISBN
+
+        System.out.print("Inserisci il codice ISBN dell'elemento da cercare: ");
+        long isbnToSearch = scanner.nextLong();
+
+        Optional<ElementoBibliografico> foundElement = archivio.stream()
+                .filter(elemento -> elemento.getIsbn() == isbnToSearch)
+//                .limit(1)
+                .findFirst();
+
+        if (foundElement.isPresent()) {
+            logger.info("Elemento trovato: " + foundElement.get());
+        } else {
+            logger.warn("Nessun elemento trovato con ISBN " + isbnToSearch);
+        }
+
         scanner.close();
+
 
 
     }
